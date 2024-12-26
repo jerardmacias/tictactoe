@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="output.css" />
+  <script src="tictactoe.js" defer></script>
+  <script src="index.js" defer></script>
+
+  <title>❌⭕ Tic Tac Toe!</title>
+</head>
+
+<body class="container mx-auto px-4 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%">
+  <!-- Taulell del joc -->
+  <main class="flex flex-col flex-nowrap">
+    <section class="flex flex-row justify-evenly mb-6">
+      <div class="flex flex-col items-start mx-5">
+        <h1 class="text-xl font-bold text-slate-600 mb-2">Tic Tac Toe</h1>
+        <div id="counter" class="text-xl mb-2 font-bold drop-shadow-lg">Player - X</div>
+        <button id="restart" class="blue-button">Restart Game</button>
+      </div>
+      <div class="flex flex-col">
+        <div class="flex flex-row justify-center mb-4 mt-2 mx-5">
+          <div class="mx-4">
+            <h3 class="text-lg font-semibold">Player - X</h3>
+            <p id="xWins">Wins: 0</p>
+          </div>
+          <div class="mx-4">
+            <h3 class="text-lg font-semibold">Player - O</h3>
+            <p id="oWins">Wins: 0</p>
+          </div>
+          <div class="mx-4">
+            <h3 class="text-lg font-semibold">Games</h3>
+            <p id="gamesPlayed">Played: 0</p>
+          </div>
+        </div>
+        <div class="flex flex-col items-end mx-5">
+          <button id="reset" class="blue-button">Reset Counters</button>
+        </div>
+      </div>
+    </section>
+    <section class="flex items-center justify-center h-min">
+      <div id="game" class="w-3/6 grid grid-rows-3 grid-cols-3 items-center content-center justify-items-center place-content-center place-items-center"></div>
+    </section>
+  </main>
+
+  <!-- Game Over -->
+  <section class="game-over">
+    <!-- Modal  -->
+    <div id="winnerModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+      <div class="bg-white rounded-lg p-6 w-80 text-center shadow-lg">
+        <h2 id="winnerMessage" class="text-2xl font-semibold mb-4"></h2>
+        <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-blue-500 text-white font-semibold rounded">Play
+          Again</button>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
